@@ -1,0 +1,5 @@
+require 'test/unit'
+require 'rubygems'
+require 'mocha'
+require 'config/requirements'
+require File.dirname(__FILE__) + '/../lib/postgresql_migrations'
