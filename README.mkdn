@@ -2,44 +2,45 @@
 
 # DESCRIPTION
 
-This gem implements add_foreign_key and remove_foreign_key for PostgreSQLAdapter.
+This gem implements "add_foreign_key" and "remove_foreign_key" for PostgreSQLAdapter.
 
 # REQUIREMENTS
 
 activerecord
+
 postgres
 
 # INSTALLATION
 
-$ gem sources -a http://gems.github.com (you only have to do this once)
-$ sudo gem install rafaelp-postgresql_migrations
+    $ gem sources -a http://gems.github.com (you only have to do this once)
+    
+    $ sudo gem install rafaelp-postgresql_migrations
 
 # USAGE
 
-* Example 1
+*Example 1*
 
-class UserBelongsToAccount < ActiveRecord::Migration
-  def self.up
-    add_foreign_key :users, :account_id, :accounts, :id
-  end
+    class UserBelongsToAccount < ActiveRecord::Migration
+      def self.up
+        add_foreign_key :users, :account_id, :accounts, :id
+      end
 
-  def self.down
-    remove_foreign_key :users, :account_id, :accounts, :id
-  end
-end
+      def self.down
+        remove_foreign_key :users, :account_id, :accounts, :id
+      end
+    end
 
-* Example 2
+*Example 2*
 
-class UserBelongsToAccount < ActiveRecord::Migration
-  def self.up
-    add_foreign_key :users, :account_id, :accounts, :id, :match => 'simple', :on_delete => 'restrict', :on_update => 'cascade'
-  end
+    class UserBelongsToAccount < ActiveRecord::Migration
+      def self.up
+        add_foreign_key :users, :account_id, :accounts, :id, :match => 'simple', :on_delete => 'restrict', :on_update => 'cascade'
+      end
 
-  def self.down
-    remove_foreign_key :users, :account_id
-  end
-end
-
+      def self.down
+        remove_foreign_key :users, :account_id
+      end
+    end
 
 # LICENSE
 
