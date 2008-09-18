@@ -2,24 +2,23 @@
 
 # DESCRIPTION
 
-This gem implements "add_foreign_key" and "remove_foreign_key" for PostgreSQLAdapter.
+This gem implements "add\_foreign\_key" and "remove\_foreign\_key" for PostgreSQLAdapter.
 
 # REQUIREMENTS
 
-activerecord
-
-postgres
+* activerecord
+* postgres
 
 # INSTALLATION
 
-    $ gem sources -a http://gems.github.com (you only have to do this once)
-    
+    $ sudo gem sources -a http://gems.github.com (you only have to do this once)
     $ sudo gem install rafaelp-postgresql_migrations
 
 # USAGE
 
 *Example 1*
 
+    require 'postgresql_migrations'
     class UserBelongsToAccount < ActiveRecord::Migration
       def self.up
         add_foreign_key :users, :account_id, :accounts, :id
@@ -32,6 +31,7 @@ postgres
 
 *Example 2*
 
+    require 'postgresql_migrations'
     class UserBelongsToAccount < ActiveRecord::Migration
       def self.up
         add_foreign_key :users, :account_id, :accounts, :id, :match => 'simple', :on_delete => 'restrict', :on_update => 'cascade'
