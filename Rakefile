@@ -1,17 +1,22 @@
+require 'rake'
 require 'rake/testtask'
+require 'rake/rdoctask'
 
-namespace 'test' do
-  
-  unit_tests = FileList['test/*_test.rb']
+desc 'Default: run unit tests.'
+task :default => :test
 
-  desc "Run unit tests"
-  Rake::TestTask.new('units') do |t|
-    t.libs << 'test'
-    t.test_files = unit_tests
-    t.verbose = true
-    t.warning = false
-  end
-
+desc 'Test the dbdesigner_migration_generator plugin.'
+Rake::TestTask.new(:test) do |t|
+  t.libs << 'lib'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = true
 end
 
-task :default => 'test:units'
+desc 'Generate documentation for the dbdesigner_migration_generator plugin.'
+Rake::RDocTask.new(:rdoc) do |rdoc|
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title    = 'DbdesignerMigrationGenerator'
+  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.rdoc_files.include('README')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end
