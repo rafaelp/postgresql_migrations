@@ -13,15 +13,15 @@ spec = Gem::Specification.new do |s|
 		"README.mkdn", 
 		"postgresql_migrations.gemspec", 
 		"config/requirements.rb",
-		"lib/postgresql_migrations.rb"]
+		"postgresql_migrations.rb"]
   s.test_files = [
     "test/test_helper.rb",
     "test/postgresql_migrations_add_foreign_key_test.rb",
     "test/postgresql_migrations_remove_foreign_key_test.rb",
      ]
-  s.require_path = "lib"
+  s.require_path = "."
   s.has_rdoc = true
   s.extra_rdoc_files = ["README.mkdn"]
   s.add_dependency("activerecord", ["> 0.0.0"])
-  s.add_dependency("postgres", ["> 0.0.0"])
+  s.add_dependency("pg", ["> 0.0.0"])
 end

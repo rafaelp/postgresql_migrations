@@ -1,10 +1,10 @@
 require 'rubygems'
-%w[activerecord postgres].each do |req_gem|
+%w[activerecord pg].each do |req_gem|
   begin
     require req_gem
   rescue LoadError
     puts "This Rakefile requires the '#{req_gem}' RubyGem."
-    puts "Installation: gem install #{req_gem} -y"
+    puts "Installation: sudo gem install #{req_gem} -y"
     exit
   end
 end
