@@ -25,7 +25,7 @@ This gem implements "add\_foreign\_key" and "remove\_foreign\_key" for PostgreSQ
       end
 
       def self.down
-        remove_foreign_key :users, :account_id, :accounts, :id
+        remove_foreign_key :users, :account_id
       end
     end
 
