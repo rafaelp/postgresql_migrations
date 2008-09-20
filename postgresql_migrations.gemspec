@@ -1,6 +1,6 @@
 spec = Gem::Specification.new do |s| 
   s.name = "postgresql_migrations"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
   s.date     = "2009-09-20"
   s.author = "Rafael Lima"
   s.email = "contato@rafael.adm.br"
@@ -12,7 +12,7 @@ spec = Gem::Specification.new do |s|
     "MIT-LICENSE",
     "Rakefile",
 		"README.mkdn", 
-		"postgresql_migrations.rb"
+		"postgresql_migrations.rb",
 		"postgresql_migrations.gemspec", 
 		"config/requirements.rb",
   ]
