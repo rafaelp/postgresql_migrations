@@ -1,0 +1,10 @@
+config/requirements.rb
+test/postgresql_migrations_add_foreign_key_test.rb
+test/postgresql_migrations_remove_foreign_key_test.rb
+test/test_helper.rb
+Manifest
+MIT-LICENSE
+postgresql_migrations.gemspec
+postgresql_migrations.rb
+Rakefile
+README.mkdn
